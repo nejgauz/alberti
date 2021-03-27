@@ -2,7 +2,7 @@
 echo 'Производится расшифровка...' . PHP_EOL;
 
 if (empty($argv[1]) || empty($argv[2]) || empty($argv[3])) {
-    exit('Недостаточно аргументов');
+    exit('Недостаточно аргументов' . PHP_EOL);
 }
 
 $string = $argv[1];
@@ -10,7 +10,7 @@ $alphabetQuantity = (int)$argv[2];
 $shifts = explode(' ', $argv[3]);
 
 if (count($shifts) !== $alphabetQuantity) {
-    exit('Количество алфавитов не совпадает с количеством смещений');
+    exit('Количество алфавитов не совпадает с количеством смещений' . PHP_EOL);
 }
 
 $alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
