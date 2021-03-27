@@ -1,17 +1,20 @@
 <?php
 echo 'Производится расшифровка...' . PHP_EOL;
 
-if (empty($argv[1])) {
+if (empty($argv[1]) || empty($argv[2]) || empty($argv[3]) || empty($argv[4])) {
     exit('Недостаточно аргументов');
 }
 
 $string = $argv[1];
+$shift1 = $argv[2];
+$shift2 = $argv[3];
+$shift3 = $argv[4];
 $limit = mb_strlen($string, 'UTF-8');
 
 $alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-$cryptoAlphabet1 = 'гдеёжзийклмнопрстуфхцчшщъыьэюяабв';
-$cryptoAlphabet2 = 'ийклмнопрстуфхцчшщъыьэюяабвгдеёжз';
-$cryptoAlphabet3 = 'жзийклмнопрстуфхцчшщъыьэюяабвгдеё';
+$cryptoAlphabet1 = mb_substr($alphabet, $shift1) . mb_substr($alphabet, 0, $shift1);
+$cryptoAlphabet2 = mb_substr($alphabet, $shift2) . mb_substr($alphabet, 0, $shift2);
+$cryptoAlphabet3 = mb_substr($alphabet, $shift3) . mb_substr($alphabet, 0, $shift3);
 
 $result = '';
 for ($i = 0; $i < $limit; $i++) {
