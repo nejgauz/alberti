@@ -15,6 +15,7 @@ if (count($shifts) !== $alphabetQuantity) {
 
 $alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 foreach ($shifts as $index => $shift) {
+    $shift = $shift % 33;
     ${"alphabet$index"} = mb_substr($alphabet, $shift) . mb_substr($alphabet, 0, $shift);
 }
 
