@@ -6,9 +6,9 @@ if (empty($argv[1]) || empty($argv[2]) || empty($argv[3]) || empty($argv[4])) {
 }
 
 $string = $argv[1];
-$shift1 = $argv[2];
-$shift2 = $argv[3];
-$shift3 = $argv[4];
+$shift1 = (int)$argv[2];
+$shift2 = (int)$argv[3];
+$shift3 = (int)$argv[4];
 $limit = mb_strlen($string, 'UTF-8');
 
 $alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
